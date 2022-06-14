@@ -15,9 +15,4 @@ async function main (): Promise<void> {
   }
 }
 
-// main().then(
-//   (e) => console.log("ccccc", e),
-//   (w) => console.log("==>", w)
-// )
-
 void main()
