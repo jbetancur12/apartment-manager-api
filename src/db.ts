@@ -9,15 +9,13 @@ const {
   POSTGRES_DB_NAME
 } = process.env
 
-console.log(process.env)
-
 export const AppDataSource = new DataSource({
   type: 'postgres',
-  host: POSTGRES_HOST,
-  port: Number(POSTGRES_PORT),
-  username: POSTGRES_USER,
-  password: POSTGRES_PASSWORD,
-  database: POSTGRES_DB_NAME,
+  host: POSTGRES_HOST ?? 'localhost',
+  port: Number(POSTGRES_PORT) ?? 5432,
+  username: POSTGRES_USER ?? 'user',
+  password: POSTGRES_PASSWORD ?? 'password',
+  database: POSTGRES_DB_NAME ?? 'database',
   entities: [Tenant],
   logging: true,
   synchronize: true
