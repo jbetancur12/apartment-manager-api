@@ -9,12 +9,11 @@ import {
 
 const router = Router()
 
-router.route('/tenants').get(getTenants)
+router.route('/tenants').get(getTenants).post(createTenant)
 
 router
   .route('/tenants/:id')
   .get(getTenant)
-  .post(createTenant)
   .put(updateTenant)
   .delete(deleteTenant)
 
